@@ -1,0 +1,17 @@
+body {
+  z-index: 0;
+  background-color: #c6d7f6;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  position: relative;
+  min-width: 320px;
+  color: $dark-grey;
+  font: 300 14px/1.7 Roboto, "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
+  background-image: url("../img/Yosemite.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}

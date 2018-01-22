@@ -1,0 +1,52 @@
+@mixin font-specs($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin bar-header() {
+  overflow: hidden;
+  text-align: center;
+
+  &:before,
+  &:after {
+    background-color: $secondary;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+    max-width: 80px;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+  }
+  &:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  &:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+  &:hover {
+    &:before,
+    &:after {
+      background-color: $primary;
+    }
+  }
+}
+
+@mixin animation-delay($delay) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin retina-font-weight($weight) {
+  /* CSS for high-resolution devices */
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+    font-weight: $weight;
+  }
+}
