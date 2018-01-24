@@ -19,49 +19,76 @@
 
 <body>
 
-  <div style="display: flex;justify-content: center">
-    <img style="height: 100px; width: 100px; border-radius: 50%" src="assets/img/Profile.jpg" alt="Profile Picture"/>
+  <div class="flex-centered">
+    <img class="profile-img" src="assets/img/Profile.jpg" alt="Profile Picture"/>
   </div>
 
-  <header style="text-align: center;">
-      <h1 style="margin-bottom: 0px">Hi, I'm Eric.</h1>
-      <h3>This is my web portfolio.</h3>
+  <header class="centered">
+      <h1 class="close-bottom">Hi, I'm Eric.</h1>
+      <h3 class="close-bottom close-top">This is my web portfolio.</h3>
       <p>I created it to display my work in CSCI 379 at Bucknell University</p>
   </header>
   
   
-  <h2 style="text-align: center;">-- Projects --</h2>
-  <section style="display: flex; justify-content: center">
-    <div style="width: 25%">
-      <h3 style="text-align: center;">Project 1</h3>
-      <p style="text-align: center;">Coming Soon!</p>
-    </div>
-    <div style="width: 25%">
-      <h3 style="text-align: center;">Project 2</h3>
-      <p style="text-align: center;">Coming Soon!</p>
-    </div>
-    <div style="width: 25%">
-      <h3 style="text-align: center;">Project 3</h3>
-      <p style="text-align: center;">Coming Soon!</p>
+  <section>
+    <h2 class="centered close-bottom" style="margin-top: 15px">-- Projects --</h2>
+    <div class="flex-centered">
+      <section class="project">
+        <h3 class="centered close-bottom">Project 1</h3>
+        <p class="centered">Coming Soon!</p>
+      </section>
+      <section class="project">
+        <h3 class="centered close-bottom">Project 2</h3>
+        <p class="centered">Coming Soon!</p>
+      </section>
+      <section class="project">
+        <h3 class="centered close-bottom">Project 3</h3>
+        <p class="centered">Coming Soon!</p>
+      </section>
     </div>
   </section>
 
-  <h2 style="text-align: center;">-- About Me --</h2>
-  <footer style="display: flex; flex-direction: column; align-items: center">
-    <p>
+  <h2 class="centered close-bottom">-- About Me --</h2>
+  <footer class="flex-centered vertical">
+    <p class="close-bottom">
       I'm a computer science student at Bucknell University in my senior year. I have experience in Python, Java,
       and Javascript; but I'm always excited to expand my knowledge.
     </p>
-    <p>
-      <a class=link target='blank' href='&#109;ailt&#111;&#58;e&#37;7&#50;ic&#37;6D&#97;r&#115;ha&#108;l71&#53;&#64;g&#109;a%69l&#46;com' rel=nofollow><span class="fa fa-envelope"></span> &#101;ricma&#114;shall&#55;1&#53;&#64;gm&#97;il&#46;co&#109;</a>
+    <p class="close-bottom">
+      Contact me at: <a class=link target='blank' href='&#109;ailt&#111;&#58;e&#37;7&#50;ic&#37;6D&#97;r&#115;ha&#108;l71&#53;&#64;g&#109;a%69l&#46;com' rel=nofollow>
+        &#101;ricma&#114;shall&#55;1&#53;&#64;gm&#97;il&#46;co&#109;
+      </a>
     </p>
   </footer>
-  
-  <link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css />
-  <!--  Load the initial CSS  -->
-  <!-- <link rel=stylesheet href=assets/css/index.min.css> -->
-
-  <!--  Link CSS stylesheets  -->
-  <!-- <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lato:300,400"> -->
+  <style>
+    .profile-img {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      margin: 10px;
+    }
+    .flex-centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .vertical {
+      flex-direction: column;
+    }
+    .project {
+      width: 25%;
+    }
+    .close-bottom {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+    .close-top {
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+    .centered {
+      text-align: center;
+    }
+  </style>
 </body>
 </html>
