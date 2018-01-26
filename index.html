@@ -7,55 +7,25 @@
   <meta content="Eric Marshall" name=author>
   <meta content="Eric Marshall" name=application-name>
   <meta content=website property=og:type>
-  <meta content=https://ericmarshall.codes/ property=og:url>
   <meta content="Eric Marshall" property=og:title>
   <meta property="og:image" content="//ericmarshall.codes/assets/img/Website.png"/>
   <meta property="og:url" content="//ericmarshall.codes/" />
   <meta content="Eric Marshall's website" name=description/>
   <meta content="Eric's website" property="og:description"/>
-  <meta content="Eric Marshall, Eric, Marshall, Erik, Erick, Marshal, Computer Science Personal Websites, CS, Comp Sci, Programming, Personal Website, Bucknell, Software Engineer, Programmer" name=keywords />
-  <link href=assets/img/favicon.png rel=icon type=image/png />
-  <style>
-    .profile-img {
-      height: 120px;
-      width: 120px;
-      border-radius: 50%;
-      margin: 10px;
-    }
-    .flex-centered {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .vertical {
-      flex-direction: column;
-    }
-    .project {
-      width: 25%;
-    }
-    .close-bottom {
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-    }
-    .close-top {
-      margin-top: 0px;
-      padding-top: 0px;
-    }
-    .centered {
-      text-align: center;
-    }
-  </style>
+  <link href="assets/common/favicon.png" rel="icon" type="image/png" />
+  <link href="assets/index/index.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
 </head>
 
-<body>
+<body class="nunito body">
   <div class="flex-centered">
-    <img class="profile-img" src="assets/img/Profile.jpg" alt="Profile Picture"/>
+    <img class="profile-img" src="assets/index/img/Profile.jpg" alt="Profile Picture"/>
   </div>
 
   <!-- INTRO/CLASS INFO -->
 
   <header class="centered">
-      <h1 class="close-bottom">Web Portfolio</h1>
+      <h1 class="close-bottom">Hi, I'm Eric.</h1>
       <h3 class="close-bottom close-top">This is my web portfolio.</h3>
       <p>I created it to display my work in CSCI 379 at Bucknell University</p>
   </header>
@@ -63,31 +33,50 @@
   <!-- PROJECTS SECTION -->
 
   <section>
-    <h2 class="centered close-bottom" style="margin-top: 15px">-- Projects --</h2>
+    <h2 class="centered close-bottom large-top">-- Projects --</h2>
     <p class="centered close-bottom">
       These are the projects I am creating/have created as part of CSCI 379
     </p>
     <div class="flex-centered">
-      <section class="project">
-        <h3 class="centered close-bottom">Project 1</h3>
-        <p class="centered">Coming Soon!</p>
-      </section>
-      <section class="project">
-        <h3 class="centered close-bottom">Project 2</h3>
-        <p class="centered">Coming Soon!</p>
-      </section>
-      <section class="project">
-        <h3 class="centered close-bottom">Project 3</h3>
-        <p class="centered">Coming Soon!</p>
-      </section>
+      <article class="project">
+        <div class="under-construction"></div>
+        <div>
+          <h3 class="centered close-bottom">Project 1</h3>
+          <p class="centered close-top">Coming Soon!</p>
+        </div>
+      </article>
+      <article class="project">
+        <div class="under-construction"></div>
+        <div>
+          <h3 class="centered close-bottom">Project 2</h3>
+          <p class="centered close-top">Coming Soon!</p>
+        </div>
+      </article>
+      <article class="project">
+        <div class="under-construction"></div>
+        <div>
+          <h3 class="centered close-bottom">Project 3</h3>
+          <p class="centered close-top">Coming Soon!</p>
+        </div>
+      </article>
     </div>
   </section>
 
+  <!-- CLASS ASSIGNMENT PAGES -->
+
+  <h2 class="centered close-bottom">-- Assignment Links --</h2>
+  <section class="flex-centered vertical">
+    <ul class="blurb clean-list">
+      <li >
+        <a href="fontfun.html">Fun with Fonts</a>
+      </li>
+    </ul>
+  </section>
   <!-- ABOUT ME -->
 
   <h2 class="centered close-bottom">-- About Me --</h2>
   <footer class="flex-centered vertical">
-    <p class="close-bottom">
+    <p class="blurb close-bottom">
       I'm a computer science student at Bucknell University in my senior year. I have experience in Python, Java,
       and Javascript; but I'm always excited to expand my knowledge.
     </p>
