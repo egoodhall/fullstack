@@ -1,7 +1,7 @@
 /* RGB */
-$white: #ffffff;
-$pink: #FF5F6D;
-$orange: rgb(253, 157, 67);
-$aqua-dark: rgb(29, 180, 142);
-$aqua: rgb(40, 230, 204);
-$grey: rgb(78, 61, 66);
+$white: #ffffff;               // Plain white
+$pink: #FF5F6D;                // Used for the background and unhighlighted links
+$orange: rgb(253, 157, 67);    // Used to augment the primary color
+$aqua-dark: rgb(29, 180, 142); // The color used to show something is highlighted (white background)
+$aqua: rgb(40, 230, 204);      // Same as ^ but for darker backgrounds
+$grey: rgb(78, 61, 66);        // General text/dark drawing color
