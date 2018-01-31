@@ -30,13 +30,6 @@ h1 {
   font-family: $sans-serif;
 }
 
-.title {
-  color: $white;
-  font-size: 4em;
-  font-weight: 300;
-  margin-top: 10px;
-}
-
 h2 {
   font-family: $sans-serif;
   @include bar-header($pink, $aqua-dark);
@@ -60,6 +53,13 @@ footer {
   }
 }
 
+.title {
+  color: $white;
+  font-size: 4em;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
 .blurb {
   @include gaps(5px, 5px);
 }
@@ -79,10 +79,15 @@ footer {
 .flex-centered {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 
-  &-vertical {
+  &-column {
+    flex-wrap: nowrap;
     flex-direction: column;
+  }
+
+  &-aligned {
+    align-items: center;
   }
 }
 
@@ -106,9 +111,9 @@ footer {
     width: 100%;
     padding: 0px;
   }
-  .flex-centered {
-    flex-direction: column;
-  }
+  // .flex-centered {
+  //   flex-direction: column;
+  // }
   .content {
     margin: 0px;
     padding: 0px;

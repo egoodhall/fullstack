@@ -49,12 +49,6 @@ a {
 h1 {
   font-family: "Lato", sans-serif; }
 
-.title {
-  color: #ffffff;
-  font-size: 4em;
-  font-weight: 300;
-  margin-top: 10px; }
-
 h2 {
   font-family: "Lato", sans-serif;
   overflow: hidden;
@@ -99,6 +93,12 @@ footer {
     footer i:hover {
       color: #28e6cc; }
 
+.title {
+  color: #ffffff;
+  font-size: 4em;
+  font-weight: 300;
+  margin-top: 10px; }
+
 .blurb {
   margin-top: 5px;
   margin-bottom: 5px; }
@@ -116,9 +116,12 @@ footer {
 .flex-centered {
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .flex-centered-vertical {
+  flex-wrap: wrap; }
+  .flex-centered-column {
+    flex-wrap: nowrap;
     flex-direction: column; }
+  .flex-centered-aligned {
+    align-items: center; }
 
 .hover-grow {
   display: inline-block;
@@ -137,9 +140,6 @@ footer {
     width: 100%;
     padding: 0px; }
 
-  .flex-centered {
-    flex-direction: column; }
-
   .content {
     margin: 0px;
     padding: 0px;
@@ -147,3 +147,5 @@ footer {
     padding-bottom: 20px;
     width: 100%;
     border-radius: 0px; } }
+
+/*# sourceMappingURL=common.css.map */

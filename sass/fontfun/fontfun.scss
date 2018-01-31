@@ -13,17 +13,9 @@
 .lato {
   font-family: Lato, sans-serif;
 }
-
-.subtitle {
-  
-}
 .list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.section-container {
-  display: flex;
   justify-content: center;
 }
 .section {
@@ -50,10 +42,6 @@ ol {
 }
 
 @media screen and (max-width: 800px) {
-  .section-container {
-    flex-direction: column;
-    align-items: center;
-  }
   .content {
     margin: 0px;
     padding: 0px;
