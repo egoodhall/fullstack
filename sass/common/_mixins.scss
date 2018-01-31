@@ -1,0 +1,77 @@
+@import '_colors.scss';
+
+@mixin bar-header($primary: $orange, $secondary: $green) {
+  overflow: hidden;
+  text-align: center;
+
+  &:before,
+  &:after {
+    background-color: $primary;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+    max-width: 20px;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+  }
+  &:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  &:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+  &:hover {
+    &:before,
+    &:after {
+      background-color: $secondary;
+    }
+  }
+}
+
+
+@mixin hover-highlight($normal: $pink, $highlight: $green) {
+  transition: color 0.25s ease-in-out;
+  color: $normal;
+  text-decoration: none;
+
+  &:hover {
+    color: $highlight;
+  }
+}
+
+
+@mixin gaps($t, $b) {
+  margin-top: $t;
+  margin-bottom: $b;
+}
+
+
+@mixin animated-background($primary, $secondary, $duration: 20s) {
+  background: linear-gradient(to right, $primary, $secondary);
+  background-size: 400% 400%;
+
+  -webkit-animation: FadeBackground $duration ease infinite;
+  -moz-animation: FadeBackground $duration ease infinite;
+  animation: FadeBackground $duration ease infinite;
+
+  @-webkit-keyframes FadeBackground {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-moz-keyframes FadeBackground {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @keyframes FadeBackground { 
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+}

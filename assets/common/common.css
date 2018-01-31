@@ -120,7 +120,7 @@ footer {
   .flex-centered-vertical {
     flex-direction: column; }
 
-.hover-grow, .project {
+.hover-grow {
   display: inline-block;
   vertical-align: middle;
   transform: translateZ(0);
@@ -129,7 +129,7 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.3s;
   transition-property: transform; }
-  .hover-grow:hover, .project:hover, .hover-grow:focus, .project:focus, .hover-grow:active, .project:active {
+  .hover-grow:hover, .hover-grow:focus, .hover-grow:active {
     transform: scale(1.1); }
 
 @media screen and (max-width: 800px) {
@@ -147,60 +147,3 @@ footer {
     padding-bottom: 20px;
     width: 100%;
     border-radius: 0px; } }
-body {
-  padding-top: 80px; }
-
-.profile-img, .profile-img-small, .profile-img-large {
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  margin: 10px;
-  border: solid 1px white; }
-  .profile-img-small {
-    height: 40px;
-    width: 40px; }
-  .profile-img-large {
-    height: 120px;
-    width: 120px; }
-
-.project {
-  width: 300px;
-  height: 170px;
-  margin: 10px;
-  margin-top: 15px;
-  border: 1px;
-  border-style: solid;
-  border-color: dimgray;
-  border-radius: 5px;
-  background-color: white;
-  color: black; }
-
-.under-construction {
-  display: block;
-  width: 100%;
-  height: 100px;
-  background-image: url("https://emm035.github.io/fullstack/assets/index/img/under-construction.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px; }
-
-.clean-list {
-  list-style: none;
-  padding: 0px; }
-
-.vbar {
-  height: 80px;
-  width: 1px;
-  background-color: #4e3d42;
-  margin-left: 10px;
-  margin-right: 10px; }
-
-@media screen and (max-width: 800px) {
-  .project {
-    max-width: 300px;
-    width: 70%; }
-
-  .vbar {
-    height: 0px; } }

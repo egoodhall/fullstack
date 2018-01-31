@@ -14,81 +14,88 @@
   <meta content="Eric's website" property="og:description"/>
   <link href="assets/common/favicon.png" rel="icon" type="image/png" />
   <link href="assets/index/index.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
 </head>
 
-<body class="nunito body">
+<body>
   <div class="flex-centered">
-    <img class="profile-img" src="assets/index/img/Profile.jpg" alt="Profile Picture"/>
+    <img class="profile-img-large" src="assets/index/img/Profile.jpg" alt="Profile Picture"/>
   </div>
 
   <!-- INTRO/CLASS INFO -->
 
   <header class="centered">
-      <h1 class="close-bottom">Hi, I'm Eric.</h1>
-      <h3 class="close-bottom close-top">This is my web portfolio.</h3>
-      <p>I created it to display my work in CSCI 379 at Bucknell University</p>
+      <h1 class="title">Hi, I'm Eric.</h1>
   </header>
+
+  <div class="content">
+    <section>
+      <h3 class="blurb centered">This is my web portfolio.</h3>
+      <p>I created it to display my work in CSCI 379 at Bucknell University</p>
+    </section>
+    
+    <!-- PROJECTS SECTION -->
   
-  <!-- PROJECTS SECTION -->
-
-  <section>
-    <h2 class="centered close-bottom large-top">-- Projects --</h2>
-    <p class="centered close-bottom">
-      These are the projects I am creating/have created as part of CSCI 379
-    </p>
+    <section>
+      <h2 class="centered close-bottom large-top subheading">Projects</h2>
+      <p class="centered close-bottom">
+        These are the projects I am creating/have created as part of CSCI 379
+      </p>
+      <div class="flex-centered">
+        <article class="project">
+          <div class="under-construction"></div>
+          <div>
+            <h3 class="centered close-bottom">Project 1</h3>
+            <p class="centered close-top">Coming Soon!</p>
+          </div>
+        </article>
+        <article class="project">
+          <div class="under-construction"></div>
+          <div>
+            <h3 class="centered close-bottom">Project 2</h3>
+            <p class="centered close-top">Coming Soon!</p>
+          </div>
+        </article>
+        <article class="project">
+          <div class="under-construction"></div>
+          <div>
+            <h3 class="centered close-bottom">Project 3</h3>
+            <p class="centered close-top">Coming Soon!</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  
+    <!-- CLASS ASSIGNMENT PAGES -->
+  
+    <h2 class="centered close-bottom subheading">Assignment Links</h2>
+    <section class="flex-centered vertical">
+      <ul class="blurb clean-list">
+        <li >
+          <a href="fontfun.html">Fun with Fonts</a>
+        </li>
+      </ul>
+    </section>
+    <!-- ABOUT ME -->
+  
+    <h2 class="centered close-bottom subheading">About Me</h2>
     <div class="flex-centered">
-      <article class="project">
-        <div class="under-construction"></div>
-        <div>
-          <h3 class="centered close-bottom">Project 1</h3>
-          <p class="centered close-top">Coming Soon!</p>
-        </div>
-      </article>
-      <article class="project">
-        <div class="under-construction"></div>
-        <div>
-          <h3 class="centered close-bottom">Project 2</h3>
-          <p class="centered close-top">Coming Soon!</p>
-        </div>
-      </article>
-      <article class="project">
-        <div class="under-construction"></div>
-        <div>
-          <h3 class="centered close-bottom">Project 3</h3>
-          <p class="centered close-top">Coming Soon!</p>
-        </div>
-      </article>
+      <img class="profile-img-small" src="assets/index/img/Profile.jpg" alt="Profile Picture"/>
+      <div class="vbar"></div>
+      <div class="flex-centered-vertical">
+        <p>
+          I'm a computer science student at Bucknell University in my senior year. I have experience in Python, Java,
+          and Javascript; but I'm always excited to expand my knowledge.
+        </p>
+        <p class="close-bottom">
+          Contact me at: <a class=link target='blank' href='&#109;ailt&#111;&#58;e&#37;7&#50;ic&#37;6D&#97;r&#115;ha&#108;l71&#53;&#64;g&#109;a%69l&#46;com' rel=nofollow>
+            &#101;ricma&#114;shall&#55;1&#53;&#64;gm&#97;il&#46;co&#109;
+          </a>
+        </p>
+      </div>
     </div>
-  </section>
-
-  <!-- CLASS ASSIGNMENT PAGES -->
-
-  <h2 class="centered close-bottom">-- Assignment Links --</h2>
-  <section class="flex-centered vertical">
-    <ul class="blurb clean-list">
-      <li >
-        <a href="fontfun.html">Fun with Fonts</a>
-      </li>
-    </ul>
-  </section>
-  <!-- ABOUT ME -->
-
-  <h2 class="centered close-bottom">-- About Me --</h2>
-  <footer class="footer-content">
-    <img class="small-profile-img" src="assets/index/img/Profile.jpg" alt="Profile Picture"/>
-    <div class="vbar"></div>
-    <div class="flex-centered vertical">
-      <p class="blurb close-bottom">
-        I'm a computer science student at Bucknell University in my senior year. I have experience in Python, Java,
-        and Javascript; but I'm always excited to expand my knowledge.
-      </p>
-      <p class="close-bottom">
-        Contact me at: <a class=link target='blank' href='&#109;ailt&#111;&#58;e&#37;7&#50;ic&#37;6D&#97;r&#115;ha&#108;l71&#53;&#64;g&#109;a%69l&#46;com' rel=nofollow>
-          &#101;ricma&#114;shall&#55;1&#53;&#64;gm&#97;il&#46;co&#109;
-        </a>
-      </p>
-    </div>
+  </div>
+  <footer class="flex-centered">
+    <p>Made with <a><i><i class="fa fa-heart" aria-hidden="true"></i></i></a> by Eric</p>
   </footer>
 </body>
 </html>

@@ -1,0 +1,120 @@
+@import '_colors.scss';
+@import '_mixins.scss';
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+// Fonts
+$sans-serif: 'Lato', sans-serif;
+$serif:      'Source Serif Pro', serif;
+
+html, body {
+  padding: 0px;
+  margin: 0px;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @include animated-background($pink, $orange);
+  font-family: $sans-serif;
+  color: $grey;
+}
+
+a {
+  @include hover-highlight($pink, $aqua-dark);
+}
+
+h1 {
+  font-family: $sans-serif;
+}
+
+.title {
+  color: $white;
+  font-size: 4em;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+h2 {
+  font-family: $sans-serif;
+  @include bar-header($pink, $aqua-dark);
+  @include gaps(30px, 10px);
+}
+
+h3 {
+  @include gaps(10px, 0px);
+  margin: auto;
+}
+
+p {
+  max-width: 500px;
+  margin: auto;
+}
+
+footer {
+  padding: 30px;
+  i {
+    @include hover-highlight($grey, $aqua);
+  }
+}
+
+.blurb {
+  @include gaps(5px, 5px);
+}
+
+.centered {
+  text-align: center;
+}
+
+.content {
+  width: 92%;
+  border-radius: 10px;
+  background-color: $white;
+  margin: auto;
+  padding: 20px;
+}
+
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-vertical {
+    flex-direction: column;
+  }
+}
+
+.hover-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+
+  &:hover, &:focus, &:active {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+    padding: 0px;
+  }
+  .flex-centered {
+    flex-direction: column;
+  }
+  .content {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    border-radius: 0px;
+  }
+}

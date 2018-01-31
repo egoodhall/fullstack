@@ -1,0 +1,82 @@
+@import '../common/common.scss';
+@import url('https://fonts.googleapis.com/css?family=Cabin|Josefin+Sans|Nunito|Lato');
+
+.cabin {
+  font-family: Cabin, sans-serif;
+}
+.josefin-sans {
+  font-family: Josefin Sans, sans-serif;
+}
+.nunito {
+  font-family: Nunito, sans-serif;
+}
+.lato {
+  font-family: Lato, sans-serif;
+}
+
+.subtitle {
+  
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section-container {
+  display: flex;
+  justify-content: center;
+}
+.section {
+  margin: 5px;
+  width: 500px;
+}
+.underline {
+  text-decoration: underline;
+}
+.back {
+
+  a {
+    font-family: $sans-serif;
+    @include hover-highlight($pink, $aqua-dark);
+  }
+}
+
+ol {
+  padding: 0px;
+
+  li {
+    list-style: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    margin: 0px;
+    padding: 0px;
+  }
+  .section {
+    max-width: 90%;
+  }
+  .back {
+    width: 100%;
+    background-color: $white;
+    border-bottom: solid 1px $pink;
+    height: 40px;
+    z-index: 2;
+    float: left;
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    padding-left: 10px;
+    a {
+      line-height: 40px;
+    }
+  }
+  body {
+    padding-top: 60px;
+  }
+}
