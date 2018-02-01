@@ -54,7 +54,7 @@
 @mixin animated-background($primary, $secondary, $duration: 20s) {
   background: linear-gradient(to right, $primary, $secondary);
   background-size: 400% 400%;
-
+  transform: translateZ(0);
   -webkit-animation: FadeBackground $duration ease infinite;
   -moz-animation: FadeBackground $duration ease infinite;
   animation: FadeBackground $duration ease infinite;

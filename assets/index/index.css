@@ -11,34 +11,12 @@ html * {
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  background: linear-gradient(to right, #FF5F6D, #fd9d43);
-  background-size: 400% 400%;
-  -webkit-animation: FadeBackground 20s ease infinite;
-  -moz-animation: FadeBackground 20s ease infinite;
-  animation: FadeBackground 20s ease infinite;
+  background: #FF5F6D;
+  background: -webkit-linear-gradient(to top, #FF5F6D, #fd9d43);
+  background: linear-gradient(to top, #FF5F6D, #fd9d43);
   font-family: "Lato", sans-serif;
   color: #4e3d42; }
-@-webkit-keyframes FadeBackground {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-@-moz-keyframes FadeBackground {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-@keyframes FadeBackground {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
+
 a {
   transition: color 0.25s ease-in-out;
   color: #FF5F6D;
@@ -165,7 +143,7 @@ body {
     width: 120px; }
 
 .project {
-  width: 300px;
+  min-width: 300px;
   height: 170px;
   margin: 10px;
   margin-top: 15px;
