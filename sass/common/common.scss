@@ -17,10 +17,9 @@ html * {
 }
 
 body {
-  // @include animated-background($pink, $orange);
   background: $pink;
-  background: -webkit-linear-gradient(to top, $pink, $orange);
-  background: linear-gradient(to top, $pink, $orange);
+  background: -webkit-linear-gradient(to bottom, $pink, $orange);
+  background: linear-gradient(to bottom, $pink, $orange);
   font-family: $sans-serif;
   color: $grey;
 }

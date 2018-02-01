@@ -13,8 +13,8 @@ html * {
 
 body {
   background: #FF5F6D;
-  background: -webkit-linear-gradient(to top, #FF5F6D, #fd9d43);
-  background: linear-gradient(to top, #FF5F6D, #fd9d43);
+  background: -webkit-linear-gradient(to bottom, #FF5F6D, #fd9d43);
+  background: linear-gradient(to bottom, #FF5F6D, #fd9d43);
   font-family: "Lato", sans-serif;
   color: #4e3d42; }
 
