@@ -253,5 +253,75 @@ footer {
     border-radius: 0px; }
     .content .vbar {
       color: #4e3d42; } }
+body {
+  padding-top: 50px; }
+  body .vbar {
+    height: 0px; }
 
-/*# sourceMappingURL=common.css.map */
+header {
+  padding: 10px; }
+
+img.profile {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+  position: inherit; }
+
+.title {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.content {
+  border: solid 1px #4e3d42; }
+
+.project.content {
+  margin: 10px;
+  flex-grow: 1;
+  width: 25%; }
+  .project.content .p1 {
+    text-align: left; }
+  .project.content .p2 {
+    text-align: center; }
+  .project.content .p3 {
+    text-align: right; }
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+h3 {
+  background-color: #28e6cc; }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .project.content {
+    width: 40%; }
+    .project.content .p1 {
+      text-align: left; }
+    .project.content .p2 {
+      text-align: right; }
+    .project.content .p3 {
+      text-align: center; } }
+@media screen and (max-width: 767px) {
+  .project.content {
+    width: 100%;
+    margin: 0px;
+    padding: 10px; }
+    .project.content .p1, .project.content .p2, .project.content .p3 {
+      text-align: left;
+      padding-left: 10px; }
+
+  img.profile {
+    height: 80px;
+    width: 80px; }
+
+  body {
+    padding-top: 0px; }
+    body .vbar {
+      height: 100px; }
+
+  .title {
+    margin-top: 10px;
+    margin-bottom: 0px; } }
+
+/*# sourceMappingURL=p1.css.map */

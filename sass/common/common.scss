@@ -1,10 +1,8 @@
 @import '_colors.scss';
 @import '_mixins.scss';
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-// Fonts
-$sans-serif: 'Lato', sans-serif;
-$serif:      'Source Serif Pro', serif;
+@import '_layout.scss';
+@import '_navigation.scss';
+@import '_fonts.scss';
 
 html, body {
   padding: 0px;
@@ -21,11 +19,11 @@ body {
   background: -webkit-linear-gradient(to bottom, $pink, $orange);
   background: linear-gradient(to bottom, $pink, $orange);
   font-family: $sans-serif;
-  color: $grey;
+  color: $white;
 }
 
 a {
-  @include hover-highlight($pink, $aqua-dark);
+  @include hover-highlight($grey, $pink);
 }
 
 h1 {
@@ -51,7 +49,7 @@ p {
 footer {
   padding: 30px;
   i {
-    @include hover-highlight($grey, $aqua);
+    @include hover-highlight($white, $aqua);
   }
 }
 
@@ -66,30 +64,37 @@ footer {
   @include gaps(5px, 5px);
 }
 
-.centered {
-  text-align: center;
-}
-
 .content {
   width: 92%;
   border-radius: 10px;
   background-color: $white;
   margin: auto;
   padding: 20px;
+  color: $grey;
 }
 
-.flex-centered {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.fill-parent {
+  position: absolute;
 
-  &-column {
-    flex-wrap: nowrap;
-    flex-direction: column;
+  &.-left {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 40%;
   }
 
-  &-aligned {
-    align-items: center;
+  &.-center {
+    top: 0px;
+    bottom: 0px;
+    right: 60%;
+    left: 40%;
+  }
+
+  &.-right {
+    top: 0px;
+    bottom: 0px;
+    left: 60%;
+    right: 100%;
   }
 }
 
@@ -108,14 +113,75 @@ footer {
   }
 }
 
-@media screen and (max-width: 800px) {
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  margin-top: 30px;
+  li {
+    width: 20%
+  }
+  ul {
+    align-content: center;
+    overflow: auto;
+    width: 100%;
+  }
+}
+
+.tool {
+  -webkit-flex-basis: 20px;
+  -ms-flex-preferred-size: 20px;
+  flex-basis: 20px;
+  svg {
+    stroke: $pink;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    -webkit-animation: draw 10s linear infinite;
+    animation: draw 10s linear infinite;
+  }
+  &:nth-child(1) svg {
+    @include animation-delay(0s);
+  }
+  &:nth-child(2) svg {
+    @include animation-delay(0.6s);
+  }
+  &:nth-child(3) svg {
+    @include animation-delay(1.2s);
+  }
+  &:nth-child(4) svg {
+    @include animation-delay(1.8s);
+  }
+  &:nth-child(5) svg {
+    @include animation-delay(2.4s);
+  }
+  &:nth-child(6) svg {
+    @include animation-delay(3s);
+  }
+}
+
+@keyframes draw {
+  0%, 10%, 90%, 100% {
+    stroke-dashoffset: 1000;
+    stroke: $orange;
+  }
+  30%, 70% {
+    stroke: $pink;
+    // stroke: green;
+  }
+  45%, 55% {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
   body {
     width: 100%;
     padding: 0px;
   }
-  // .flex-centered {
-  //   flex-direction: column;
-  // }
   .content {
     margin: 0px;
     padding: 0px;
@@ -123,5 +189,9 @@ footer {
     padding-bottom: 20px;
     width: 100%;
     border-radius: 0px;
+
+    .vbar {
+      color: $grey;
+    }
   }
 }

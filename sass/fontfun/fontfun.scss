@@ -25,13 +25,6 @@
 .underline {
   text-decoration: underline;
 }
-.back {
-
-  a {
-    font-family: $sans-serif;
-    @include hover-highlight($pink, $aqua-dark);
-  }
-}
 
 ol {
   padding: 0px;
@@ -48,21 +41,6 @@ ol {
   }
   .section {
     max-width: 90%;
-  }
-  .back {
-    width: 100%;
-    background-color: $white;
-    border-bottom: solid 1px $pink;
-    height: 40px;
-    z-index: 2;
-    float: left;
-    position: fixed;
-    top: 0;
-    padding: 5px;
-    padding-left: 10px;
-    a {
-      line-height: 40px;
-    }
   }
   body {
     padding-top: 60px;

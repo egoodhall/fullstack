@@ -1,0 +1,52 @@
+
+.float {
+  float: inherit;
+
+  &.-left {
+    float: left;
+  }
+
+  &.-right {
+    float: right;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+
+  &.-wrap {
+    flex-wrap: wrap;
+
+    &-reverse {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  &.-column {
+    // flex-wrap: nowrap;
+    flex-direction: column;
+
+    &.-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &.-aligned {
+    align-items: center;
+  }
+
+  &.-reverse {
+    flex-direction: row-reverse
+  }
+}
+
+.clean-list {
+  list-style: none;
+  padding: 0px;
+}

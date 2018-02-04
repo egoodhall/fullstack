@@ -50,6 +50,10 @@
   margin-bottom: $b;
 }
 
+@mixin animation-delay($delay) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
 
 @mixin animated-background($primary, $secondary, $duration: 20s) {
   background: linear-gradient(to right, $primary, $secondary);

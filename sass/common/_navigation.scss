@@ -1,0 +1,42 @@
+@import '_fonts.scss';
+
+body {
+  a {
+    @include hover-highlight($grey, $aqua);
+  }
+}
+
+.content {
+  a {
+    @include hover-highlight($pink, $aqua-dark);
+  }
+}
+
+.back {
+  a {
+    font-family: $sans-serif;
+    @include hover-highlight($pink, $aqua-dark);
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 767px) {
+  .back {
+    width: 100%;
+    background-color: $white;
+    border-bottom: solid 1px $pink;
+    height: 40px;
+    z-index: 2;
+    float: left;
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    padding-left: 10px;
+    a {
+      line-height: 40px;
+    }
+  }
+}

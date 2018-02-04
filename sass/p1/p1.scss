@@ -1,0 +1,94 @@
+@import '../common/common.scss';
+
+body {
+  padding-top: 50px;
+  .vbar {
+    height: 0px;
+  }
+}
+
+header {
+  padding: 10px;
+}
+
+img {
+  &.profile {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+    position: inherit;
+  }
+}
+.title {
+  @include gaps(0px, 0px);
+}
+
+.content {
+  border: solid 1px $grey;
+}
+
+.project.content {
+  margin: 10px;
+  flex-grow: 1;
+  width: 25%;
+  .p1 {
+    text-align: left;
+  }
+  .p2 {
+    text-align: center;
+  }
+  .p3 {
+    text-align: right;
+  }
+}
+
+h2 {
+  @include gaps(0px, 0px);
+}
+
+h3 {
+  background-color: $aqua;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .project.content {
+    width: 40%;
+    .p1 {
+      text-align: left;
+    }
+    .p2 {
+      text-align: right;
+    }
+    .p3 {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .project.content {
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    .p1, .p2, .p3 {
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+  img {
+    &.profile {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  body {
+    padding-top: 0px;
+    .vbar {
+      height: 100px;
+    }
+  }
+  .title {
+    @include gaps(10px, 0px);
+  }
+}
