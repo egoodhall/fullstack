@@ -31,6 +31,24 @@
   .flex-centered.-reverse {
     flex-direction: row-reverse; }
 
+.fill-parent {
+  position: absolute; }
+  .fill-parent.-left {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 40%; }
+  .fill-parent.-center {
+    top: 0px;
+    bottom: 0px;
+    right: 60%;
+    left: 40%; }
+  .fill-parent.-right {
+    top: 0px;
+    bottom: 0px;
+    left: 60%;
+    right: 100%; }
+
 .clean-list {
   list-style: none;
   padding: 0px; }
@@ -71,6 +89,127 @@ body a {
     padding-left: 10px; }
     .back a {
       line-height: 40px; } }
+/* RGB */
+/* RGB */
+.float {
+  float: inherit; }
+  .float.-left {
+    float: left; }
+  .float.-right {
+    float: right; }
+
+.centered {
+  text-align: center; }
+
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; }
+  .flex-centered.-wrap {
+    flex-wrap: wrap; }
+    .flex-centered.-wrap-reverse {
+      flex-wrap: wrap-reverse; }
+  .flex-centered.-column {
+    flex-direction: column; }
+    .flex-centered.-column.-reverse {
+      flex-direction: column-reverse; }
+  .flex-centered.-aligned {
+    align-items: center; }
+  .flex-centered.-reverse {
+    flex-direction: row-reverse; }
+
+.fill-parent {
+  position: absolute; }
+  .fill-parent.-left {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 40%; }
+  .fill-parent.-center {
+    top: 0px;
+    bottom: 0px;
+    right: 60%;
+    left: 40%; }
+  .fill-parent.-right {
+    top: 0px;
+    bottom: 0px;
+    left: 60%;
+    right: 100%; }
+
+.clean-list {
+  list-style: none;
+  padding: 0px; }
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px; }
+  .tool-list ul {
+    align-content: center;
+    overflow: auto;
+    width: 100%; }
+    .tool-list ul li {
+      width: 33%; }
+
+.tool-section {
+  margin-top: 15px; }
+
+.tool {
+  width: 40px;
+  -webkit-flex-basis: 20px;
+  -ms-flex-preferred-size: 20px;
+  flex-basis: 20px; }
+  .tool svg {
+    stroke: #fd9d43;
+    stroke-width: 1.5px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    -webkit-animation: draw 10s linear infinite;
+    animation: draw 10s linear infinite; }
+    .tool svg.sass {
+      stroke-width: 1px;
+      stroke-dasharray: 5000;
+      stroke-dashoffset: 5000;
+      -webkit-animation: draw-long 10s linear infinite;
+      animation: draw-long 10s linear infinite; }
+  .tool:nth-child(1) svg {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s; }
+  .tool:nth-child(2) svg {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s; }
+  .tool:nth-child(3) svg {
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s; }
+  .tool:nth-child(4) svg {
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s; }
+  .tool:nth-child(5) svg {
+    -webkit-animation-delay: 2.4s;
+    animation-delay: 2.4s; }
+  .tool:nth-child(6) svg {
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s; }
+
+@keyframes draw-long {
+  0%, 10%, 90%, 100% {
+    stroke-dashoffset: 5000;
+    stroke: #fd9d43; }
+  30%, 70% {
+    stroke: #FF5F6D; }
+  45%, 55% {
+    stroke-dashoffset: 0; } }
+@keyframes draw {
+  0%, 10%, 90%, 100% {
+    stroke-dashoffset: 1000;
+    stroke: #fd9d43; }
+  30%, 70% {
+    stroke: #FF5F6D; }
+  45%, 55% {
+    stroke-dashoffset: 0; } }
 html, body {
   padding: 0px;
   margin: 0px; }
@@ -158,24 +297,6 @@ footer {
   padding: 20px;
   color: #4e3d42; }
 
-.fill-parent {
-  position: absolute; }
-  .fill-parent.-left {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 40%; }
-  .fill-parent.-center {
-    top: 0px;
-    bottom: 0px;
-    right: 60%;
-    left: 40%; }
-  .fill-parent.-right {
-    top: 0px;
-    bottom: 0px;
-    left: 60%;
-    right: 100%; }
-
 .hover-grow, .project {
   display: inline-block;
   vertical-align: middle;
@@ -188,57 +309,6 @@ footer {
   .hover-grow:hover, .project:hover, .hover-grow:focus, .project:focus, .hover-grow:active, .project:active {
     transform: scale(1.1); }
 
-.tool-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-  margin-top: 30px; }
-  .tool-list li {
-    width: 20%; }
-  .tool-list ul {
-    align-content: center;
-    overflow: auto;
-    width: 100%; }
-
-.tool {
-  -webkit-flex-basis: 20px;
-  -ms-flex-preferred-size: 20px;
-  flex-basis: 20px; }
-  .tool svg {
-    stroke: #FF5F6D;
-    stroke-width: 1px;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    -webkit-animation: draw 10s linear infinite;
-    animation: draw 10s linear infinite; }
-  .tool:nth-child(1) svg {
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s; }
-  .tool:nth-child(2) svg {
-    -webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s; }
-  .tool:nth-child(3) svg {
-    -webkit-animation-delay: 1.2s;
-    animation-delay: 1.2s; }
-  .tool:nth-child(4) svg {
-    -webkit-animation-delay: 1.8s;
-    animation-delay: 1.8s; }
-  .tool:nth-child(5) svg {
-    -webkit-animation-delay: 2.4s;
-    animation-delay: 2.4s; }
-  .tool:nth-child(6) svg {
-    -webkit-animation-delay: 3s;
-    animation-delay: 3s; }
-
-@keyframes draw {
-  0%, 10%, 90%, 100% {
-    stroke-dashoffset: 1000;
-    stroke: #fd9d43; }
-  30%, 70% {
-    stroke: #FF5F6D; }
-  45%, 55% {
-    stroke-dashoffset: 0; } }
 @media screen and (max-width: 768px) {
   body {
     width: 100%;
@@ -271,18 +341,20 @@ body {
     width: 120px; }
 
 .project {
-  width: 700px;
+  width: 460px;
   height: 200px;
   margin: 10px;
   margin-top: 15px;
   background-color: white;
-  color: black; }
+  color: black;
+  display: flex; }
+  .project.-r-img {
+    flex-wrap: wrap-reverse; }
+  .project.-l-img {
+    flex-wrap: wrap; }
   .project .img {
-    display: inline-block;
-    width: 40%;
-    min-width: 200px;
-    height: 100%;
-    max-width: 300px;
+    width: 200px;
+    height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%; }
@@ -290,44 +362,34 @@ body {
       background-image: url("https://emm035.github.io/fullstack/assets/index/img/p1-img.png"); }
     .project .img.-no-p {
       background-image: url("https://emm035.github.io/fullstack/assets/index/img/under-construction.jpg"); }
-  .project .vbar {
-    height: 100%;
-    width: 1px;
-    background: grey;
-    display: inline-block; }
   .project .description {
-    display: inline-block;
-    width: 200px;
-    height: 100%;
+    width: 250px;
+    height: 200px;
     vertical-align: top;
-    margin-top: 10px; }
+    padding: 5px; }
+    .project .description p {
+      padding-top: 10px; }
 
 .vbar {
   height: 0px; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
+  .project {
+    width: 300px;
+    height: 400px; }
+    .project .img {
+      margin-left: 50px; }
+    .project .description {
+      padding-top: 20px;
+      width: 300px; } }
+@media screen and (max-width: 767px) {
   .content section {
     margin-left: 10px;
     margin-right: 10px; }
-  .content .vbar {
-    color: #4e3d42; }
 
   .project {
-    margin-top: 10px;
-    max-width: 300px;
-    width: 70%;
-    height: 300px; }
+    width: 300px; }
     .project .img {
-      width: 100%;
-      max-height: 170px; }
-    .project .vbar {
-      height: 0px; }
-    .project .description {
-      width: 100%;
-      margin-top: 0px;
-      height: auto; }
-
-  .vbar {
-    height: 0px; } }
+      margin-left: 50px; } }
 
 /*# sourceMappingURL=index.css.map */

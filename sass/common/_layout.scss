@@ -46,6 +46,31 @@
   }
 }
 
+.fill-parent {
+  position: absolute;
+
+  &.-left {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 40%;
+  }
+
+  &.-center {
+    top: 0px;
+    bottom: 0px;
+    right: 60%;
+    left: 40%;
+  }
+
+  &.-right {
+    top: 0px;
+    bottom: 0px;
+    left: 60%;
+    right: 100%;
+  }
+}
+
 .clean-list {
   list-style: none;
   padding: 0px;

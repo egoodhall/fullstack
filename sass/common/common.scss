@@ -3,6 +3,7 @@
 @import '_layout.scss';
 @import '_navigation.scss';
 @import '_fonts.scss';
+@import '_svg.scss';
 
 html, body {
   padding: 0px;
@@ -73,31 +74,6 @@ footer {
   color: $grey;
 }
 
-.fill-parent {
-  position: absolute;
-
-  &.-left {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 40%;
-  }
-
-  &.-center {
-    top: 0px;
-    bottom: 0px;
-    right: 60%;
-    left: 40%;
-  }
-
-  &.-right {
-    top: 0px;
-    bottom: 0px;
-    left: 60%;
-    right: 100%;
-  }
-}
-
 .hover-grow {
   display: inline-block;
   vertical-align: middle;
@@ -112,69 +88,6 @@ footer {
     transform: scale(1.1);
   }
 }
-
-.tool-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-  margin-top: 30px;
-  li {
-    width: 20%
-  }
-  ul {
-    align-content: center;
-    overflow: auto;
-    width: 100%;
-  }
-}
-
-.tool {
-  -webkit-flex-basis: 20px;
-  -ms-flex-preferred-size: 20px;
-  flex-basis: 20px;
-  svg {
-    stroke: $pink;
-    stroke-width: 1px;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    -webkit-animation: draw 10s linear infinite;
-    animation: draw 10s linear infinite;
-  }
-  &:nth-child(1) svg {
-    @include animation-delay(0s);
-  }
-  &:nth-child(2) svg {
-    @include animation-delay(0.6s);
-  }
-  &:nth-child(3) svg {
-    @include animation-delay(1.2s);
-  }
-  &:nth-child(4) svg {
-    @include animation-delay(1.8s);
-  }
-  &:nth-child(5) svg {
-    @include animation-delay(2.4s);
-  }
-  &:nth-child(6) svg {
-    @include animation-delay(3s);
-  }
-}
-
-@keyframes draw {
-  0%, 10%, 90%, 100% {
-    stroke-dashoffset: 1000;
-    stroke: $orange;
-  }
-  30%, 70% {
-    stroke: $pink;
-    // stroke: green;
-  }
-  45%, 55% {
-    stroke-dashoffset: 0;
-  }
-}
-
 
 
 @media screen and (max-width: 768px) {

@@ -24,45 +24,47 @@ body {
 }
 .project {
   @extend .hover-grow;
-  width: 700px;
+  width: 460px;
   height: 200px;
   margin: 10px;
   margin-top: 15px;
   background-color: white;
   color: black;
+  display: flex;
+  
+  &.-r-img {
+    flex-wrap: wrap-reverse;
+  }
+  
+  &.-l-img {
+    flex-wrap: wrap;
+  }
   
   .img {
-    display: inline-block;
-    width: 40%;
-    min-width: 200px;
-    height: 100%;
-    max-width: 300px;
+    width: 200px;
+    height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    
+ 
     &.-p1 {
       background-image: url("https://emm035.github.io/fullstack/assets/index/img/p1-img.png");  
     }
-    
+
     &.-no-p {  
       background-image: url("https://emm035.github.io/fullstack/assets/index/img/under-construction.jpg");
     }
   }
-  
-  .vbar {
-    height: 100%;
-    width: 1px;
-    background: grey;
-    display: inline-block;
-  }
-  
+
   .description {
-    display: inline-block;
-    width: 200px;
-    height: 100%;
+    width: 250px;
+    height: 200px;
     vertical-align: top;
-    margin-top: 10px;
+    padding: 5px;
+
+    p {
+      padding-top: 10px;
+    }
   }
 }
 
@@ -71,36 +73,34 @@ body {
   height: 0px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
+  .project {
+    width: 300px;
+    height: 400px;
+
+    .img {
+      margin-left: 50px;
+    }
+
+    .description {
+      padding-top: 20px;
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
   .content {
     section {
       margin-left: 10px;
       margin-right: 10px;
     }
-    .vbar {
-      color: $grey;
-    }
   }
   .project {
-    margin-top: 10px;
-    max-width: 300px;
-    width: 70%;
-    height: 300px;
-    
+    width: 300px;
+
     .img {
-      width: 100%;
-      max-height: 170px;
+      margin-left: 50px;
     }
-    .vbar {
-      height: 0px;
-    }
-    .description {
-      width: 100%;
-      margin-top: 0px;
-      height: auto;
-    }
-  }
-  .vbar {
-    height: 0px;
   }
 }
