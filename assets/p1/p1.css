@@ -290,6 +290,7 @@ footer {
   margin-bottom: 5px; }
 
 .content {
+  box-sizing: border-box;
   width: 92%;
   border-radius: 10px;
   background-color: #ffffff;
@@ -343,12 +344,19 @@ img.profile {
   margin-bottom: 0px; }
 
 .content {
-  border: solid 1px #4e3d42; }
+  border: solid 1px #4e3d42;
+  width: auto;
+  margin: 10px 10px 5px 10px; }
+
+.project-list {
+  margin: 5px; }
 
 .project.content {
-  margin: 10px;
+  margin: 5px;
   flex-grow: 1;
   width: 25%; }
+  .project.content p {
+    max-width: none; }
   .project.content .p1 {
     text-align: left; }
   .project.content .p2 {
@@ -364,6 +372,10 @@ h3 {
   background-color: #28e6cc; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  img.profile {
+    height: 80px;
+    width: 80px; }
+
   .project.content {
     width: 40%; }
     .project.content .p1 {
@@ -373,6 +385,14 @@ h3 {
     .project.content .p3 {
       text-align: center; } }
 @media screen and (max-width: 767px) {
+  .content {
+    margin: 0px;
+    padding: 10px; }
+
+  .project-list {
+    padding: 0px;
+    margin: 0px; }
+
   .project.content {
     width: 100%;
     margin: 0px;
@@ -382,8 +402,8 @@ h3 {
       padding-left: 10px; }
 
   img.profile {
-    height: 80px;
-    width: 80px; }
+    height: 60px;
+    width: 60px; }
 
   body {
     padding-top: 0px; }

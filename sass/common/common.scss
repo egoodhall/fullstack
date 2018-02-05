@@ -66,6 +66,7 @@ footer {
 }
 
 .content {
+  box-sizing: border-box;
   width: 92%;
   border-radius: 10px;
   background-color: $white;
