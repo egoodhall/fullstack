@@ -4,6 +4,7 @@
 @import '_navigation.scss';
 @import '_fonts.scss';
 @import '_svg.scss';
+@import '_animation.scss';
 
 html, body {
   padding: 0px;
@@ -16,6 +17,7 @@ html * {
 }
 
 body {
+  // @extend .fade-in;
   background: $pink;
   background: -webkit-linear-gradient(to bottom, $pink, $orange);
   background: linear-gradient(to bottom, $pink, $orange);
@@ -73,21 +75,6 @@ footer {
   margin: auto;
   padding: 20px;
   color: $grey;
-}
-
-.hover-grow {
-  display: inline-block;
-  vertical-align: middle;
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
-  transition-property: transform;
-
-  &:hover, &:focus, &:active {
-    transform: scale(1.1);
-  }
 }
 
 

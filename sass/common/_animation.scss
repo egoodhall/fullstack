@@ -1,0 +1,51 @@
+@mixin hover-grow($scale: 1.1) {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+
+  &:hover, &:focus, &:active {
+    transform: scale($scale);
+  }
+}
+
+.hover-grow-lg {
+  @include hover-grow(1.15);
+}
+
+.hover-grow {
+  @include hover-grow(1.1);
+}
+
+.hover-grow-sm {
+  @include hover-grow(1.05);
+}
+
+.border-wobble {
+  border-radius: 90% 100% 65% 80% /
+                 105% 80% 75% 80%;
+  animation: wobble 10s ease-in-out alternate infinite;
+}
+
+@keyframes wobble {
+  25% {
+    border-radius: 80% 90% 100% 65% /
+                 80% 105% 80% 75%;
+  }
+  75% {
+    border-radius: 100% 65% 80% 90% /
+                 80% 75% 80% 105%;
+  }
+  50% {
+    border-radius: 65% 80% 90% 100% /
+                 75% 80% 105% 80%;
+  }
+  100% {
+    border-radius: 80% 90% 100% 65% /
+                 80% 105% 80% 75%;
+  }
+}

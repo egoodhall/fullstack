@@ -2,6 +2,8 @@
 
 body {
   padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
   .vbar {
     height: 0px;
   }
@@ -13,7 +15,8 @@ header {
 
 img {
   &.profile {
-    border-radius: 50%;
+    @extend .border-wobble;
+    border: 1px solid $white;
     height: 120px;
     width: 120px;
     margin: 10px;
@@ -61,6 +64,10 @@ h3 {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   img {
     &.profile {
       height: 80px;
@@ -107,6 +114,8 @@ h3 {
   }
   body {
     padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
     .vbar {
       height: 100px;
     }

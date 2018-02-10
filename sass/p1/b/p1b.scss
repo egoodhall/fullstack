@@ -1,0 +1,94 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+@import '../../common/common.scss';
+
+p.lead {
+  max-width: 80%;
+}
+
+header {
+  padding: 20px;
+}
+
+h3 {
+  background-color: $aqua;
+}
+
+.row {
+  // margin-left: 10%;
+  // margin-right: 10%;
+  .content-section {
+    // @extend .hover-grow;
+    border: solid 1px $grey;
+    background-color: $white;
+    color: $grey;
+    padding: 20px;
+    a {
+      @include hover-highlight($pink, $aqua-dark);
+    }
+    
+    .p1 {
+      text-align: left;
+    }
+    .p2 {
+      text-align: center;
+    }
+    .p3 {
+      text-align: right;
+    }
+  }
+}
+
+
+img {
+  &.profile {
+    @extend .border-wobble;
+    margin: 20px;
+    // border-radius: 50%;
+    height: 120px;
+    width: 120px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  img {
+    &.profile {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  .content-section {
+    .p1 {
+      text-align: left !important;
+    }
+    .p2 {
+      text-align: right !important;
+    }
+    .p3 {
+      text-align: center !important;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .content-section {
+    .p1, .p2, .p3 {
+      text-align: left !important;
+      padding-left: 10px;
+    }
+  }
+  img {
+    &.profile {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  body {
+    padding-top: 0px;
+    .vbar {
+      height: 100px;
+    }
+  }
+  .title {
+    @include gaps(10px, 0px);
+  }
+}
