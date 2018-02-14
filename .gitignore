@@ -5,5 +5,8 @@
 .sass-cache/
 *.css.map
 
+### Symbolic link for absolute paths ###
+fullstack
+
 
 # End of https://www.gitignore.io/api/sass
