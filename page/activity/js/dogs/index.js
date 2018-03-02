@@ -7,6 +7,7 @@
 
   /**
    * Wrapper around the Font Awesome image icon
+   * @returns {element} The element with the icon
    */
   function photoIcon() {
     var i = document.createElement('i');
@@ -16,22 +17,31 @@
 
 
   /**
-   * Prepare a string for being the breed title
+   * Capitalize the first
+   * @param {string} text The text to capitalize the first letter of
+   * @param {string} prefix The text to prepend
+   * @param {string} postfix The text to append
+   * @returns {string} The text result
    */
-  function titleify(text) {
-    return '    ' + text.charAt(0).toUpperCase() + text.slice(1);
+  function titleify(text, prefix = '    ', postfix = '') {
+    return prefix + text.charAt(0).toUpperCase() + text.slice(1) + postfix;
   }
 
 
   /**
    * Waits for the trigger to be true, polling every 5 ms, then runs cb
+   * @param {function} trigger A function that returns true when a task is
+                               complete - used to test an updating boolean
+   * @param {function} cb A callback to be run when the trigger is released
+   * @returns {any} null or the result of the callback
    */
   function waitUntil(trigger, cb) {
-    var waitUntil = setInterval(() => {
+    var waitTimer = setInterval(() => {
       if (trigger()) {
-        clearInterval(waitUntil);
-        cb();
+        clearInterval(waitTimer);
+        return cb();
       }
+      return null;
     }, 5);
   }
 
@@ -39,6 +49,9 @@
   /**
    * Fades the image out or in. When the image is faded out, fades in the
    * animated loader
+   * @param {string} inOut A string defining whether the image is fading in or
+   *                       out
+   * @returns {null} Null
    */
   function fadeImg(inOut = 'in') {
     animating = true;
@@ -72,16 +85,13 @@
 
   /**
    * Return a function to pull an image from the backend (with animation!)
+   * @param {string} breed The breed of dog
+   * @returns {function} A function to be used in an onclick
    */
   function retrieveImage(breed) {
     return () => {
     // Find elements to modify
-      var loader = document.getElementById('loader');
       var img = document.getElementById('img-root');
-
-      // Set opacities
-      var lOpacity = 0;
-      var iOpacity = 1;
 
       // Wait for any running animations to finish
       waitUntil(
@@ -119,6 +129,9 @@
   /**
    * Toggles whether or not the children of a breed are shown. Used as an
    * accordion
+   * @param {element} elem The element whose children should hide/show
+   * @param {string} newDisplay The display type for the child elements
+   * @returns {Null} Null
    */
   function toggleChildDisplay(elem, newDisplay = 'inline') {
     return () => {
@@ -131,7 +144,10 @@
   }
 
   /**
-   * Build a "link" for a given breed or sub-breed
+   * Builds the link or sublist for each breed
+   * @param {string} breed The primary breed
+   * @param {string} subBreed The sub-breed
+   * @returns {element} An HTML element which will request an image when clicked
    */
   function breedLink(breed, subBreed = '') {
     var div = document.createElement('div');
@@ -147,7 +163,11 @@
 
 
   /**
-   * Build the element list of sub-breeds
+   * Sublist of a each breed
+   * @param {string} breed The primary breed
+   * @param {string} subBreeds The list of sub-breeds
+   * @returns {element} An HTML element that represents the structure of the
+   *                    sub-breeds
    */
   function listSubBreeds(breed, subBreeds) {
     var ul = document.createElement('ul');
@@ -162,7 +182,11 @@
 
 
   /**
-   * Builds the entire list of breeds
+   * Builds the accordion of a single breed and its sub-breeds
+   * @param {string} breed The primary breed
+   * @param {string} subBreeds The list of sub-breeds
+   * @returns {element} An HTML element that represents the structure of the
+   *                    breed/sub-breeds
    */
   function subBreedDropdown(breed, subBreeds) {
     var div = document.createElement('div');
@@ -181,6 +205,10 @@
 
   /**
    * Builds the link or sublist for each breed
+   * @param {string} breed The primary breed
+   * @param {string} subBreeds The list of sub-breeds
+   * @returns {element} An HTML element that represents the structure of the
+   *                    breed (and sub-breeds if applicable)
    */
   function buildBreedList(breed, subBreeds) {
     var div = document.createElement('div');
@@ -209,7 +237,7 @@
       var root = document.getElementById('list-root');
 
       // Map all breeds into the correct structure
-      var allBreeds = Object.keys(breeds).map(breed => {
+      Object.keys(breeds).forEach(breed => {
         root.appendChild(buildBreedList(breed, breeds[breed]));
       });
     })

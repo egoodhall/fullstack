@@ -24,6 +24,9 @@ globals:
     describe: false
     beforeEach: false
     afterEach: false
+    window: true
+    document: true
+    fetch: true
 
 rules:
     indent: [2, 2, {SwitchCase: 1}]
