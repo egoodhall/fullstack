@@ -15,23 +15,26 @@ function handleButtonClick(event) {
   // console.log(event)
 
   // get the value of the input box
-  var name = document
-    .getElementById("name")
+  var fname = document
+    .getElementById('fname-input')
+    .value;
+  var lname = document
+    .getElementById('lname-input')
     .value;
 
-  if (name === "") {
+  if (name === '') {
     document
-      .getElementById("content")
-      .textContent = "Click the button!"
+      .getElementById('content')
+      .textContent = 'Click the button!';
   } else {
-    var message = "<h2>Hello " + name + "!</h2>";
+    var message = '<h2>Hello ' + fname + ' ' + lname + '!</h2>';
 
     document
-      .getElementById("content")
+      .getElementById('content')
       .textContent = message;
 
     document
-      .getElementById("content")
+      .getElementById('content')
       .innerHTML = message;
   }
 }
@@ -39,14 +42,14 @@ function handleButtonClick(event) {
 // 3 Unobtrusive JS
 
 function loaded() {
-  console.log("DOM loaded, adding event listeners")
+  console.log('DOM loaded, adding event listeners');
   document
-    .getElementById("sayItButton")
-    .addEventListener('click', handleButtonClick)
+    .getElementById('login-btn')
+    .addEventListener('click', handleButtonClick);
 }
 document
-  .getElementById("name")
-  .onkeyup = handleButtonClick
+  .getElementById('fname-input')
+  .onkeyup = handleButtonClick;
 
 // 4 watch my mouse
 // document
@@ -57,9 +60,9 @@ document
 
 // 5 DOMContentLoaded
 
-document.addEventListener("DOMContentLoaded", loaded)
+document.addEventListener('DOMContentLoaded', loaded);
 
-function fadeIn(element, duration=1000) {
+function fadeIn(element, duration = 1000) {
   var opacity = 0;
   var timer = setInterval(() => {
     if (element.style.opacity < 1) {
@@ -83,31 +86,31 @@ window.onload = (evt) => {
   }, 1000);
 };
 
-if (name === "student") {
+if (name === 'student') {
   // querySelector uses a CSS selector! returns the first matching element
   var title = document
-    .querySelector("#title")
+    .querySelector('#title')
     .textContent;
-  title += " & query selector";
+  title += ' & query selector';
   document
-    .querySelector("h1")
+    .querySelector('h1')
     .textContent = title;
 }
 
 // }
 
 document
-  .addEventListener("DOMContentLoaded", function (event) {
-    console.log("DOM loaded!")
+  .addEventListener('DOMContentLoaded', function(event) {
+    console.log('DOM loaded!');
     document
-      .querySelector("button")
-      .onclick = handleButtonClick
+      .querySelector('button')
+      .onclick = handleButtonClick;
 
     document
-      .querySelector("body")
-      .onmousemove = function (evt) {
-      if (evt.shiftKey) {
-        console.log("(" + evt.clientX + ", " + evt.clientY + ") " + evt.buttons)
-      }
-    }
-  })
+      .querySelector('body')
+      .onmousemove = function(evt) {
+        if (evt.shiftKey) {
+          console.log('(' + evt.clientX + ', ' + evt.clientY + ') ' + evt.buttons);
+        }
+      };
+  });
