@@ -11,7 +11,7 @@ const getStyles = (w) => ({
   title: {
     base: {
       textAlign: 'center',
-      fontSize: '6em',
+      fontSize: threeMux(w > 991, '6em', w > 768, '4em', '3em'),
       fontWeight: '300'
     },
     container: {
@@ -76,8 +76,7 @@ class App extends Component {
         results: []
       },
       query: parse(this.props.location.search) || { text: '', limit: 1000 },
-      results: [],
-      filtersDisabled: true
+      results: []
     };
 
     this.onRequestSearch = this.onRequestSearch.bind(this);
@@ -143,10 +142,6 @@ class App extends Component {
     });
   }
 
-  onFiltersToggled(disabled) {
-    this.setState({ filtersDisabled: disabled });
-  }
-
   filters(styles) {
     const filters = {
       Department: {
@@ -167,7 +162,6 @@ class App extends Component {
           value={this.state.query[type]}
           onChange={(event, key, value) => this.updateFilter(type, value)}
           style={styles.search.filter}
-          disabled={this.state.filtersDisabled}
           autoWidth={true}
         >
           {_.map(filter.opts, (opt) => (
@@ -209,7 +203,6 @@ class App extends Component {
             onRequestSearch={() => this.onRequestSearch(this.buildQueryString(this.state.query))}
             handleClear={() => this.onSearchCleared()}
             filters={this.filters(styles)}
-            onFiltersToggled={(open) => this.onFiltersToggled(open)}
             style={styles.search.bar}
           />
         </div>

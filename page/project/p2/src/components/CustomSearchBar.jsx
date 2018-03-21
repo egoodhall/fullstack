@@ -10,7 +10,7 @@ import { threeMux } from '../helpers';
 
 const getStyles = (props, state) => {
   const {disabled, iconButtonStyle, windowWidth} = props;
-  const { value, showFilters } = state;
+  const { value, filters: { display, hidden } } = state;
   const nonEmpty = value.length > 0;
 
   return {
@@ -59,14 +59,15 @@ const getStyles = (props, state) => {
       }
     },
     filterContainer: {
+      display: display,
       transition: 'all 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
       width: '100%',
       padding: 8,
       height: threeMux(windowWidth > 991, 64, windowWidth > 768, 128, 192),
       position: 'absolute',
-      top: showFilters ? 64 : 24,
+      top: hidden ? 0 : 64,
       left: 0,
-      opacity: showFilters ? 1 : 0,
+      opacity: hidden ? 0 : 1,
       zIndex: 3
     },
     input: {
@@ -89,7 +90,10 @@ class CustomSearchBar extends Component {
       focus: false,
       value: this.props.value,
       active: false,
-      showFilters: false
+      filters: {
+        hidden: true,
+        display: 'none'
+      }
     };
   }
 
@@ -134,7 +138,22 @@ class CustomSearchBar extends Component {
   }
 
   toggleFilters() {
-    this.setState({ showFilters: !this.state.showFilters }, () => this.props.onFiltersToggled(!this.state.showFilters));
+    if (!this.state.filters.hidden) {
+      console.log('hiding');
+      this.setState({filters: {...this.state.filters, hidden: true}}, () => {
+        setTimeout(() => {
+          this.setState({filters: {...this.state.filters, display: 'none'}});
+        }, 200);
+        this.props.onFiltersToggled(!this.state.filters.hidden);
+      });
+    } else {
+      this.setState({filters: {...this.state.filters, display: 'inline-block'}}, () => {
+        setTimeout(() => {
+          this.setState({filters: {...this.state.filters, hidden: false }});
+        }, 1);
+        this.props.onFiltersToggled(!this.state.filters.hidden);
+      });
+    }
   }
 
   handleKeyPressed(e) {
