@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
-import { Card, CardText, CardTitle } from 'material-ui';
-import { fmtName } from '../helpers/myBucknell';
+import { Card, CardTitle, CardMedia, List, ListItem, FlatButton, Paper } from 'material-ui';
+import { fmtName, parseLink } from '../helpers';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
+import { SocialPerson, ActionAssignment, DeviceAccessTime, ActionRoom } from 'material-ui/svg-icons';
 
 class ResultCard extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      classTitle: this.props.classTitle,
-      classNo: this.props.classNo,
-      description: this.props.description,
-      crn: this.props.crn,
-      profs: _.map(_.split(this.props.profs, '\n'), (prof) => fmtName(prof))
-    };
+  fmtCourse(no, section, title) {
+    return `${no}-${section} - ${title}`;
   }
 
-  cardTitle(no, title) {
-    return `${no} - ${title}`;
-  }
-
-  cardSubTitle(crn) {
+  fmtCRN(crn) {
     return `CRN: ${crn}`;
   }
 
@@ -30,15 +20,24 @@ class ResultCard extends Component {
       <div style={{ marginLeft: '10px', margin: '10px' }}>
         <Card>
           <CardTitle
-            title={this.cardTitle(this.state.classNo, this.state.classTitle)}
-            subtitle={this.cardSubTitle(this.state.crn)}
+            title={this.fmtCourse(this.props.no, this.props.section, this.props.title)}
+            subtitle={_(this.props.profs).split(/\n/).map((name) => fmtName(name)).join(', ')} leftIcon={<SocialPerson />}
             actAsExpander={true}
             showExpandableButton={true}
           />
-          <CardText expandable={true}>
-            Taught by: {_.join(this.state.profs, ', ')} <br/>
-            {this.state.description}
-          </CardText>
+          <CardMedia expandable={true}>
+            <List>
+              <ListItem primaryText={this.fmtCRN(this.props.crn)} leftIcon={<ActionAssignment />}/>
+              <ListItem primaryText={this.props.time} leftIcon={<DeviceAccessTime />} />
+              <ListItem primaryText={this.props.room} leftIcon={<ActionRoom />} />
+            </List>
+          </CardMedia>
+          <CardMedia>
+            <Paper zDepth={0}>
+              <FlatButton label='Desc' onClick={() => window.open(parseLink(this.props.description))} style={{ margin: '8px'}} primary={true}/>
+              <FlatButton label='Guide' style={{ margin: '8px'}} secondary={true}/>
+            </Paper>
+          </CardMedia>
         </Card>
       </div>
     );
@@ -46,19 +45,21 @@ class ResultCard extends Component {
 }
 
 ResultCard.defaultProps = {
-  classTitle: 'Unnamed Class',
-  classNo: '????',
+  title: 'Unnamed Class',
+  no: '????',
   description: 'No description available',
   crn: '??????',
-  profs: 'STAFF'
+  profs: 'STAFF',
+  time: 'TBA'
 };
 
 ResultCard.propTypes = {
-  classTitle: PropTypes.string,
-  classNo: PropTypes.string,
+  title: PropTypes.string,
+  no: PropTypes.string,
   description: PropTypes.string,
   crn: PropTypes.string,
-  profs: PropTypes.string
+  profs: PropTypes.string,
+  time: PropTypes.string
 };
 
 export default ResultCard;

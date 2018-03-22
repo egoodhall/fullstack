@@ -1,13 +1,6 @@
 import _ from 'lodash';
 
-const fmtName = (name, middle = true) => {
-  try {
-    const parts = name.match(/([A-Za-z]+), ([A-Za-z]+) ?(.+)?/);
-    return `${parts[2]}${middle ? ` ${parts[3]}` : ''} ${parts[1]}`;
-  } catch (Error) {
-    return name;
-  }
-};
+
 
 const getOrgStatus = (user, org, cb) => {
   // Returns a json object for the user
@@ -31,6 +24,5 @@ const getUserEmail = (name, cb) => {
 };
 
 export {
-  getUserEmail,
-  fmtName
+  getUserEmail
 };

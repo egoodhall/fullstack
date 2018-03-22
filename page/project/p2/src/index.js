@@ -6,8 +6,8 @@ import './index.css';
 import SearchPage from './components/SearchPage.jsx';
 import HomePage from './components/HomePage';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 
 // Needed for onTouchTap

@@ -21,14 +21,7 @@ class ResultDisplay extends Component {
 
   buildCards(classes) {
     return _.map(classes, (classInfo) => (
-      <ResultCard
-        key={`${classInfo.no} - ${classInfo.crn}`}
-        classTitle={classInfo.title}
-        classNo={classInfo.no}
-        crn={classInfo.crn}
-        profs={classInfo.profs}
-        description={'No More Information'}
-      />
+      <ResultCard key={`${classInfo.no} - ${classInfo.crn}`} {...classInfo}/>
     ));
   }
 

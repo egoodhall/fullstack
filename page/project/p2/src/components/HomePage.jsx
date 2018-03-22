@@ -193,7 +193,7 @@ class App extends Component {
       <div>
         <AppBar style={styles.search.background} showMenuIconButton={false}/>
         <div style={styles.title.container}>
-          <h1 style={{...styles.title.base, color: '#0d47a1'}}>Class&nbsp;</h1>
+          <h1 style={{...styles.title.base, color: '#eee'}}>Class&nbsp;</h1>
           <h1 style={{...styles.title.base, color: '#ffa726'}}>Search</h1>
         </div>
         <div style={styles.search.container}>

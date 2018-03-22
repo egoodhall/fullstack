@@ -134,23 +134,8 @@ class SearchPage extends Component {
     this.setState({ styles: getStyles(this.props.windowWidth, this.props.windowHeight) });
   }
 
-  getResults(query, cb = () => {}) {
-    // Remove 'text' if it needs to be taken out
-    if (query.text === '') {
-      this.setState({
-        query: {
-          ...this.state.query,
-          text: undefined
-        },
-        results: []
-      });
-    }
-
-    // Build a query string for the request
-    const queryString = this.buildQueryString(query);
-
-    // Retrieve data
-    fetch('https://www.eg.bucknell.edu/~amm042/service/q' + queryString)
+  sendQuery(url) {
+    return fetch(url)
       .then(res => res.json())
       .then(res => {
         if (res.result !== 'success') {
@@ -158,57 +143,46 @@ class SearchPage extends Component {
         }
         return res.message;
       })
-      .then(data => {
-        // Write in results
-        this.setState({
-          results: _(data).map(course => ({
-            title: course.Title,
-            crn: `${course.CRN}`,
-            no: `${course.Department} ${course.CrseNum}`,
-            profs: course.Instructor,
-            description: course.CrseDesc
-          })).sortBy(['no', 'crn']).compact().value()
-        }, () => {
-          return cb(queryString);
-        });
-      });
+      .then(data => _(data).map(course => ({
+        title: course.Title,
+        crn: `${course.CRN}`,
+        no: `${course.Department} ${course.CrseNum}`,
+        section: course.Section,
+        profs: course.Instructor,
+        description: course.CrseDesc,
+        time: course['Meeting Time'],
+        room: course.Room
+      })).sortBy(['no', 'section', 'crn']).compact().value());
+  }
+
+  getResults(query, cb = () => {}) {
+    // Remove 'text' if it needs to be taken out
+    if (query.text === '') {
+      this.setState({ query: { ...this.state.query, text: undefined }, results: [] });
+    }
+    // Build a query string for the request
+    const queryString = this.buildQueryString(query);
+    // Retrieve data
+    this.sendQuery(`https://www.eg.bucknell.edu/~amm042/service/q${queryString}`)
+      .then(data => this.setState({ results: data }, () => cb(queryString)));
   }
 
   getNextPageResults(query, cb = () => {}) {
     const queryString = this.buildQueryString(query);
 
     // Retrieve data
-    fetch('https://www.eg.bucknell.edu/~amm042/service/q' + queryString)
-      .then(res => res.json())
-      .then(res => {
-        if (res.result !== 'success') {
-          throw Error('Search failed');
+    this.sendQuery(`https://www.eg.bucknell.edu/~amm042/service/q${queryString}`)
+      .then(data => [_.flattenDeep([this.state.results, data]), data.length])
+      .then(data => this.setState({
+        loading: false,
+        results: data[0],
+        search: {
+          ...this.state.search,
+          page: this.state.search.page + 1,
+          endOfResults: data[1] < 10,
+          results: data[0]
         }
-        return res.message;
-      })
-      .then(data => {
-        // Map new classes
-        return _(data).map(course => ({
-          title: course.Title,
-          crn: `${course.CRN}`,
-          no: `${course.Department} ${course.CrseNum}`,
-          profs: course.Instructor,
-          description: course.CrseDesc
-        })).sortBy(['no', 'crn']).compact().value();
-      })
-      .then(data => {
-        const newResults = _.flattenDeep([this.state.results, data]);
-        this.setState({
-          loading: false,
-          results: newResults,
-          search: {
-            ...this.state.search,
-            page: this.state.search.page + 1,
-            endOfResults: data.length < 10,
-            results: newResults
-          }
-        }, () => cb());
-      });
+      }, cb));
   }
 
   buildQueryString(query) {
