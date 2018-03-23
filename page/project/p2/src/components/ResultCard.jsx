@@ -34,8 +34,7 @@ class ResultCard extends Component {
           </CardMedia>
           <CardMedia>
             <Paper zDepth={0}>
-              <FlatButton label='Desc' onClick={() => window.open(parseLink(this.props.description))} style={{ margin: '8px'}} primary={true}/>
-              <FlatButton label='Guide' style={{ margin: '8px'}} secondary={true}/>
+              <FlatButton label='Desc' onClick={() => window.open(parseLink(this.props.description))} style={{ margin: '8px'}} secondary={true}/>
             </Paper>
           </CardMedia>
         </Card>
@@ -50,7 +49,9 @@ ResultCard.defaultProps = {
   description: 'No description available',
   crn: '??????',
   profs: 'STAFF',
-  time: 'TBA'
+  time: 'TBA',
+  room: 'TBA',
+  section: -1
 };
 
 ResultCard.propTypes = {
@@ -59,7 +60,9 @@ ResultCard.propTypes = {
   description: PropTypes.string,
   crn: PropTypes.string,
   profs: PropTypes.string,
-  time: PropTypes.string
+  time: PropTypes.string,
+  room: PropTypes.string,
+  section: PropTypes.number
 };
 
 export default ResultCard;
