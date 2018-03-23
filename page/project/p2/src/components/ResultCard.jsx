@@ -29,7 +29,7 @@ class ResultCard extends Component {
             <List>
               <ListItem primaryText={this.fmtCRN(this.props.crn)} leftIcon={<ActionAssignment />}/>
               <ListItem primaryText={this.props.time} leftIcon={<DeviceAccessTime />} />
-              <ListItem primaryText={this.props.room} leftIcon={<ActionRoom />} />
+              <ListItem primaryText={this.props.room !== '' ? this.props.room : 'TBA'} leftIcon={<ActionRoom />} />
             </List>
           </CardMedia>
           <CardMedia>
